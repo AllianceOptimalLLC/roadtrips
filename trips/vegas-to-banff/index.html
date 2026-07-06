@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Las Vegas to Banff: Free Car-Camping Field Guide</title>
+<style>
+  :root{
+    --ink:#1a2432; --ink-soft:#42506a; --paper:#f6f4ee; --card:#ffffff;
+    --pine:#1f5f4f; --pine-deep:#123c31; --lake:#2f6f9c; --sun:#d98a2b;
+    --danger:#b23b3b; --danger-bg:#fdf1ef; --line:#e4ddd0; --gold:#c9a24a;
+    --shadow:0 10px 30px rgba(20,40,30,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+  a{color:var(--lake);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;
+    background:#0b1a16;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    filter:saturate(1.05) brightness(.82)}
+  .hero .veil{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,26,22,.35) 0%,rgba(10,26,22,.15) 40%,rgba(10,26,22,.85) 100%)}
+  .hero .wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;width:100%;padding:0 28px 54px}
+  .kicker{display:inline-block;color:#f3e9d2;letter-spacing:.28em;text-transform:uppercase;
+    font-size:.72rem;font-weight:700;margin-bottom:18px;
+    border:1px solid rgba(243,233,210,.5);padding:7px 14px;border-radius:100px;
+    background:rgba(18,60,49,.35);backdrop-filter:blur(3px)}
+  .hero h1{color:#fff;font-size:clamp(2.4rem,6vw,4.4rem);margin:0 0 14px;
+    text-shadow:0 2px 24px rgba(0,0,0,.4)}
+  .hero p.sub{color:#eee6d6;font-size:clamp(1.05rem,2.2vw,1.4rem);max-width:640px;margin:0;
+    text-shadow:0 1px 10px rgba(0,0,0,.5)}
+  .hero .route-line{color:#f3e9d2;font-weight:600;margin-top:22px;font-size:1rem;
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .hero .route-line span.dot{opacity:.6}
+
+  /* ---------- LAYOUT ---------- */
+  .container{max-width:1080px;margin:0 auto;padding:0 28px}
+  section{padding:60px 0}
+  .lede{font-size:1.22rem;color:var(--ink-soft);max-width:760px}
+  h2.sec{font-size:clamp(1.7rem,3.6vw,2.5rem);margin:0 0 6px;color:var(--pine-deep)}
+  .sec-tag{display:block;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;
+    font-weight:700;color:var(--sun);margin-bottom:10px}
+
+  /* ---------- TLDR box ---------- */
+  .tldr{background:linear-gradient(135deg,#123c31,#1f5f4f);color:#f1f3ee;border-radius:20px;
+    padding:34px 36px;box-shadow:var(--shadow);margin-top:26px}
+  .tldr h3{margin:0 0 14px;color:#fff;font-size:1.35rem}
+  .tldr ul{margin:0;padding-left:0;list-style:none}
+  .tldr li{padding:9px 0 9px 34px;position:relative;border-top:1px solid rgba(255,255,255,.12)}
+  .tldr li:first-child{border-top:none}
+  .tldr li::before{content:"";position:absolute;left:4px;top:15px;width:12px;height:12px;
+    border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,162,74,.25)}
+  .tldr b{color:#fff}
+
+  /* ---------- route strip ---------- */
+  .strip{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:34px;
+    border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .leg{padding:18px 14px;background:var(--card);text-align:center;position:relative}
+  .leg:nth-child(odd){background:#fbfaf5}
+  .leg .n{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sun);font-weight:700}
+  .leg .place{font-weight:700;margin:6px 0 2px;font-size:.98rem}
+  .leg .mi{font-size:.8rem;color:var(--ink-soft)}
+  @media(max-width:720px){.strip{grid-template-columns:repeat(2,1fr)}}
+
+  /* ---------- spot cards ---------- */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:34px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
+    border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,40,30,.16)}
+  .card .ph{position:relative;height:210px;overflow:hidden}
+  .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .card:hover .ph img{transform:scale(1.05)}
+  .card .badge{position:absolute;top:14px;left:14px;z-index:2;background:rgba(18,60,49,.92);color:#fff;
+    font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:100px}
+  .card .badge.free{background:rgba(31,95,79,.94)}
+  .card .badge.pass{background:rgba(47,111,156,.94)}
+  .card .badge.no{background:rgba(178,59,59,.94)}
+  .card .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+  .card h3{margin:0 0 3px;font-size:1.3rem;color:var(--pine-deep)}
+  .card .loc{font-size:.82rem;color:var(--sun);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+  .card p{margin:0 0 14px;color:var(--ink-soft);font-size:.96rem}
+  .facts{margin-top:auto;border-top:1px solid var(--line);padding-top:14px;display:grid;gap:7px}
+  .fact{display:flex;gap:10px;font-size:.86rem;align-items:baseline}
+  .fact .k{color:var(--pine);font-weight:700;min-width:74px;flex-shrink:0}
+  .fact .v{color:var(--ink)}
+  .view-tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+  .tag{font-size:.72rem;background:#eef3ee;color:var(--pine);border-radius:100px;padding:4px 11px;font-weight:600}
+  .tag.lake{background:#eaf2f8;color:var(--lake)}
+
+  /* ---------- rules / danger ---------- */
+  .rules{background:var(--card);border-radius:18px;box-shadow:var(--shadow);border:1px solid var(--line);
+    padding:8px 34px;margin-top:30px}
+  .rule{padding:22px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start}
+  .rule:first-child{border-top:none}
+  .rule .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    font-size:1.5rem;background:#eef3ee}
+  .rule.warn .ic{background:var(--danger-bg)}
+  .rule h4{margin:0 0 5px;font-size:1.12rem}
+  .rule p{margin:0;color:var(--ink-soft);font-size:.95rem}
+  .rule .num{font-weight:700;color:var(--pine)}
+
+  .danger{background:var(--danger-bg);border:1px solid #f0cdc7;border-left:6px solid var(--danger);
+    border-radius:14px;padding:26px 30px;margin-top:30px}
+  .danger h3{margin:0 0 10px;color:var(--danger);font-size:1.35rem;display:flex;align-items:center;gap:10px}
+  .danger p{margin:0 0 10px;color:#7a2f2f}
+  .danger p:last-child{margin:0}
+  .danger b{color:var(--danger)}
+
+  /* ---------- open questions ---------- */
+  .oq{background:#fbfaf5;border:1px dashed var(--line);border-radius:16px;padding:26px 30px;margin-top:26px}
+  .oq h3{margin:0 0 10px;color:var(--pine-deep)}
+  .oq ul{margin:0;padding-left:20px;color:var(--ink-soft)}
+  .oq li{margin:8px 0}
+
+  /* ---------- table ---------- */
+  .tbl-wrap{overflow-x:auto;margin-top:26px;border-radius:14px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;background:var(--card);min-width:640px}
+  th,td{padding:14px 16px;text-align:left;font-size:.9rem;border-bottom:1px solid var(--line)}
+  th{background:var(--pine-deep);color:#f1f3ee;font-weight:600;letter-spacing:.02em}
+  tr:last-child td{border-bottom:none}
+  td .pill{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:100px}
+  .pill.ok{background:#e7f2ec;color:var(--pine)}
+  .pill.mid{background:#fbf1e0;color:var(--sun)}
+  .pill.bad{background:var(--danger-bg);color:var(--danger)}
+
+  /* ---------- footer / sources ---------- */
+  .conf{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+    padding:3px 9px;border-radius:100px;margin-left:8px;vertical-align:middle}
+  .conf.high{background:#e7f2ec;color:var(--pine)}
+  .conf.medium{background:#fbf1e0;color:var(--sun)}
+  footer{background:var(--pine-deep);color:#cdd8d0;padding:50px 0 60px;margin-top:20px}
+  footer .container{max-width:1080px}
+  footer h3{color:#fff;margin:0 0 16px}
+  footer ul{columns:2;column-gap:40px;padding-left:18px;margin:0 0 24px}
+  @media(max-width:640px){footer ul{columns:1}}
+  footer li{margin:6px 0;font-size:.85rem;break-inside:avoid}
+  footer a{color:#9dc7b6;word-break:break-word}
+  .meta{font-size:.8rem;color:#8fa79b;border-top:1px solid rgba(255,255,255,.15);padding-top:20px}
+  .disclaimer{font-size:.82rem;color:var(--ink-soft);background:#fbfaf5;border-radius:12px;padding:16px 20px;margin-top:24px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<!-- ============ SITE NAV ============ -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:12px 22px;background:rgba(18,60,49,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.12)">
+  <a href="/" style="color:#f3e9d2;font-weight:700;letter-spacing:.02em;text-decoration:none;font-size:.95rem">&#9204;&nbsp; All Roadtrips</a>
+  <span style="color:#cdd8d0;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase">Trip 01</span>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <img src="img/moraine.jpg" alt="Turquoise glacial lake below jagged peaks, Banff National Park">
+  <div class="veil"></div>
+  <div class="wrap">
+    <span class="kicker">Road Trip Field Guide &nbsp;&bull;&nbsp; ~1,650 mi one way</span>
+    <h1>Las Vegas&nbsp;&rarr;&nbsp;Banff</h1>
+    <p class="sub">Where you can legally sleep in your vehicle for free (or nearly free) with a lake in front of you and mountains behind you, the whole way north.</p>
+    <div class="route-line">
+      <span>Nevada</span><span class="dot">&rarr;</span>
+      <span>Utah</span><span class="dot">&rarr;</span>
+      <span>Idaho</span><span class="dot">&rarr;</span>
+      <span>Montana</span><span class="dot">&rarr;</span>
+      <span>Alberta</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TLDR ============ -->
+<section class="container" id="tldr">
+  <span class="sec-tag">The short version</span>
+  <h2 class="sec">The rule of the road: free south of the border, pay-a-little up north</h2>
+  <p class="lede">Almost the entire US leg is genuine free dispersed camping on public land. The catch waits at the finish line: you cannot car camp for free inside Banff itself, or in its gateway town. Here is the whole trip in six lines.</p>
+
+  <div class="tldr">
+    <h3>Six things that decide where you sleep</h3>
+    <ul>
+      <li><b>US public land is your free bed.</b> BLM land across NV, UT and ID lets you sleep in your vehicle by default. Rule of thumb: <b>14 days, then move ~25 miles.</b></li>
+      <li><b>National forests are the mountain-and-lake sweet spot,</b> free but with per-forest limits (14 days in NV/ID, <b>16 days</b> around Bozeman, MT).</li>
+      <li><b>The only vetted named free spots</b> that survived fact-checking cluster in the <b>Bozeman, Montana corridor</b> (Hyalite, Fairy Lake, Copper City).</li>
+      <li><b>Closest legal free-style camping to Banff = Alberta Crown land,</b> but you need a <b>Public Lands Camping Pass</b> ($20 / 3 days or $30 / year, same price for Americans).</li>
+      <li><b>Inside Banff &amp; Jasper: car camping is flatly illegal</b> outside paid campgrounds, sleeping-in-vehicle included. Fines and eviction.</li>
+      <li><b>Canmore (Banff's gateway town) hunts van sleepers:</b> $100 fine 10pm&ndash;8am, no-camping signs at every entrance, active patrols.</li>
+    </ul>
+  </div>
+
+  <!-- route strip -->
+  <div class="strip">
+    <div class="leg"><div class="n">Leg 1</div><div class="place">Nevada</div><div class="mi">BLM + Great Basin NF</div></div>
+    <div class="leg"><div class="n">Leg 2</div><div class="place">Utah</div><div class="mi">BLM + Uinta / Flaming Gorge</div></div>
+    <div class="leg"><div class="n">Leg 3</div><div class="place">Idaho</div><div class="mi">Sawtooth NRA lakes</div></div>
+    <div class="leg"><div class="n">Leg 4</div><div class="place">Montana</div><div class="mi">Bozeman free-spot cluster</div></div>
+    <div class="leg"><div class="n">Border</div><div class="place">Into Alberta</div><div class="mi">Crown land + pass</div></div>
+    <div class="leg"><div class="n">Finish</div><div class="place">Banff</div><div class="mi">Paid campground only</div></div>
+  </div>
+</section>
+
+<!-- ============ SPOT CARDS ============ -->
+<section class="container" id="spots">
+  <span class="sec-tag">Where to actually park for the night</span>
+  <h2 class="sec">The spots, south to north</h2>
+  <p class="lede">Only the Montana cluster has specific named sites that passed adversarial fact-checking. The other legs are shown by the best legal zone to aim for, with the general public-land rules that make them legal. Sooner-to-Vegas options come first.</p>
+
+  <div class="grid">
+
+    <!-- NEVADA -->
+    <article class="card">
+      <div class="ph"><span class="badge free">Free &bull; BLM/NF</span><img src="img/greatbasin.jpg" alt="Wheeler Peak rising above Great Basin, Nevada"></div>
+      <div class="body">
+        <div class="loc">Nevada &bull; ~1&ndash;4 hrs from Vegas</div>
+        <h3>Great Basin &amp; NV back-country BLM</h3>
+        <div class="view-tags"><span class="tag">Mountains</span><span class="tag">Big-sky stargazing</span></div>
+        <p>Your fastest escape from Vegas. Nevada is mostly BLM, so dispersed vehicle camping is legal by default unless posted closed. Aim for the flanks of the Snake Range near Great Basin NP (Humboldt-Toiyabe NF) for real alpine backdrops.</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Cost</span><span class="v">Free</span></div>
+          <div class="fact"><span class="k">Stay limit</span><span class="v">14 days / 28, then move ~25 mi (BLM); 14 days (Humboldt-Toiyabe NF)</span></div>
+          <div class="fact"><span class="k">Note</span><span class="v">No vetted named site survived checking here &mdash; use the BLM/NF default rules and pick a spot on the ground</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- UTAH -->
+    <article class="card">
+      <div class="ph"><span class="badge free">Free &bull; BLM</span><img src="img/flaminggorge.jpg" alt="Red canyon walls above Flaming Gorge reservoir, Utah"></div>
+      <div class="body">
+        <div class="loc">Utah &bull; Uinta / Flaming Gorge corridor</div>
+        <h3>Utah BLM &amp; the Uinta reservoirs</h3>
+        <div class="view-tags"><span class="tag lake">Lake views</span><span class="tag">Red rock</span></div>
+        <p>Utah BLM confirms a 14-day camp limit per site. Heading north toward the Uinta Mountains and the Flaming Gorge area gets you water-and-cliff scenery. High-use zones (parts of Moab) can post shorter limits or designated-sites-only, so read the sign.</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Cost</span><span class="v">Free (but check field-office fee/permit areas)</span></div>
+          <div class="fact"><span class="k">Stay limit</span><span class="v">14 days per campsite (BLM Utah)</span></div>
+          <div class="fact"><span class="k">Water setback</span><span class="v">Camp ~200 ft back from any lake/stream</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- IDAHO -->
+    <article class="card">
+      <div class="ph"><span class="badge free">Free &bull; NF</span><img src="img/redfish.jpg" alt="Redfish Lake mirroring the Sawtooth Range, Idaho"></div>
+      <div class="body">
+        <div class="loc">Idaho &bull; Sawtooth NRA</div>
+        <h3>Sawtooth lakes (Redfish, Stanley)</h3>
+        <div class="view-tags"><span class="tag lake">Lake views</span><span class="tag">Jagged peaks</span></div>
+        <p>The most postcard-perfect lake-and-mountain leg. Salmon-Challis NF allows dispersed camping (14-day limit), and the Stanley basin is ringed by the Sawtooths. Idaho BLM codifies the classic rule word-for-word: 14 days, move 25+ miles, no return for 28 days.</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Cost</span><span class="v">Free dispersed (developed lakeshore campgrounds cost)</span></div>
+          <div class="fact"><span class="k">Stay limit</span><span class="v">14 days (Salmon-Challis NF &amp; ID BLM)</span></div>
+          <div class="fact"><span class="k">Water setback</span><span class="v">200 ft from water (ID BLM guidance)</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- MONTANA - Hyalite -->
+    <article class="card">
+      <div class="ph"><span class="badge free">Free &bull; Verified</span><img src="img/hyalite.jpg" alt="Forested Montana mountain valley near Hyalite"></div>
+      <div class="body">
+        <div class="loc">Montana &bull; ~11&ndash;12 mi from Bozeman</div>
+        <h3>Hyalite Canyon Dispersed (FS&nbsp;1046)</h3>
+        <div class="view-tags"><span class="tag lake">Reservoir views</span><span class="tag">Creekside</span></div>
+        <p>Free USFS dispersed camping near Hyalite Reservoir, good for vans and RVs with creekside, flat sites. Important: camping is legal only at the <b>designated carsonite-signed sites</b> within about &frac12; mile of the main roads, not camp-anywhere. Bear food storage required.</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Cost</span><span class="v">Free</span></div>
+          <div class="fact"><span class="k">Stay limit</span><span class="v">16 days (Custer Gallatin NF, Region 1)</span></div>
+          <div class="fact"><span class="k">Access</span><span class="v">Paved-ish; seasonal road closures apply</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- MONTANA - Fairy Lake -->
+    <article class="card">
+      <div class="ph"><span class="badge free">Free &bull; Verified</span><img src="img/sawtooth.jpg" alt="Alpine lake below a sharp peak"></div>
+      <div class="body">
+        <div class="loc">Montana &bull; Bridger Mountains</div>
+        <h3>Fairy Lake Dispersed</h3>
+        <div class="view-tags"><span class="tag lake">Alpine lake</span><span class="tag">High country</span></div>
+        <p>High-elevation meadow sites about 4 miles in on rough Fairy Lake Road, right beside alpine Fairy Lake under Sacagawea Peak. Budget ~27 driving miles from Bozeman (not the 16 straight-line miles you'll see quoted). High-clearance vehicle recommended.</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Cost</span><span class="v">Free</span></div>
+          <div class="fact"><span class="k">Stay limit</span><span class="v">16 days (Custer Gallatin NF)</span></div>
+          <div class="fact"><span class="k">Access</span><span class="v">Rough road &mdash; high clearance advised</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- MONTANA - Copper City / Brackett -->
+    <article class="card">
+      <div class="ph"><span class="badge free">Free &bull; Verified</span><img src="img/spraylakes.jpg" alt="Open mountain valley with reservoir"></div>
+      <div class="body">
+        <div class="loc">Montana &bull; near Three Forks / Bridger Bowl</div>
+        <h3>Copper City BLM &amp; South Fork Brackett Creek</h3>
+        <div class="view-tags"><span class="tag">Stargazing</span><span class="tag">Mountain views</span></div>
+        <p>Two more free options in the Bozeman cluster. <b>Copper City BLM</b> near Three Forks is open pullout camping with big stargazing skies (standard 14-day BLM rules). <b>South Fork Brackett Creek</b> is free FS dispersed near Bridger Bowl with mountain views; 4WD helps for the upper sites.</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Cost</span><span class="v">Free</span></div>
+          <div class="fact"><span class="k">Stay limit</span><span class="v">Copper City 14 days (BLM); Brackett 16 days (NF)</span></div>
+          <div class="fact"><span class="k">Access</span><span class="v">Brackett upper sites 4WD-recommended</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ALBERTA CROWN LAND -->
+    <article class="card">
+      <div class="ph"><span class="badge pass">Pass required</span><img src="img/kananaskis.jpg" alt="Alberta Eastern Slopes mountains"></div>
+      <div class="body">
+        <div class="loc">Alberta &bull; Eastern Slopes, west of Calgary</div>
+        <h3>Alberta Crown Land random camping</h3>
+        <div class="view-tags"><span class="tag lake">Lake &amp; river</span><span class="tag">Closest to Banff</span></div>
+        <p>The closest legal free-style vehicle camping to Banff. The Eastern Slopes corridor allows random camping, but you must carry a <b>Public Lands Camping Pass</b>. Same price for Americans and Albertans. Think Ghost, Waiparous, and Spray Lakes area (note: driving into Kananaskis proper also needs the separate Conservation Pass).</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Cost</span><span class="v">$20 / 3 days or $30 / year per person (+ $3.25 fee, GST, one-time $8 WIN #)</span></div>
+          <div class="fact"><span class="k">Stay limit</span><span class="v">14 days per spot, then move 1+ km for 72 hrs</span></div>
+          <div class="fact"><span class="k">Who</span><span class="v">Anyone 18+; pass required year-round</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- BC recreation sites -->
+    <article class="card">
+      <div class="ph"><span class="badge pass">Free / cheap</span><img src="img/lakelouise.jpg" alt="Glacial lake framed by mountains"></div>
+      <div class="body">
+        <div class="loc">British Columbia &bull; if you route through BC</div>
+        <h3>BC Forest Service recreation sites</h3>
+        <div class="view-tags"><span class="tag lake">Often lakeside</span><span class="tag">Forested</span></div>
+        <p>If your route swings through BC, Forest Service recreation sites give a legal window comparable to the US BLM norm, and many are free or cheap and lake-adjacent. The clock only resets after a full 72-hour absence of you, your vehicle and your gear.</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Cost</span><span class="v">Many free; some low-fee</span></div>
+          <div class="fact"><span class="k">Stay limit</span><span class="v">14 consecutive days (Forest Recreation Reg. B.C. Reg 16/2004)</span></div>
+          <div class="fact"><span class="k">Note</span><span class="v">BC Parks campgrounds use a different rule (14 nights/year)</span></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ THE BANFF CATCH ============ -->
+<section class="container" id="banff">
+  <span class="sec-tag">Read this before the finish line</span>
+  <h2 class="sec">The Banff catch: no free car camping at the destination</h2>
+  <p class="lede">Everything above gets you free or cheap. The last 100 km is where it flips. Two hard walls stand between you and a free night's sleep at Banff.</p>
+
+  <div class="danger">
+    <h3>&#9888;&#65039; Wall 1 &mdash; Inside Banff &amp; Jasper National Parks: illegal, period</h3>
+    <p>Both parks' regulations explicitly prohibit camping <b>including sleeping in a vehicle</b> in roadside pullouts, parking lots, trailheads and day-use areas. Banff's own wording: <em>"Camping is allowed only in designated campgrounds."</em></p>
+    <p>There is <b>no free vehicle overnight option inside either park.</b> Frontcountry campgrounds cap at 14 nights and cost money. The only random-camping exception is backcountry, permit-only, and far from any road, so by definition it can never be car camping. Violations draw fines and eviction.</p>
+  </div>
+
+  <div class="danger" style="margin-top:22px">
+    <h3>&#9888;&#65039; Wall 2 &mdash; Canmore (the gateway town) actively hunts van sleepers</h3>
+    <p>Under Canmore's camping bylaw, sleeping in a vehicle <b>between 10 p.m. and 8 a.m. carries a $100 fine</b> (up to a $10,000 maximum). No-camping signs are posted at <b>every entrance into town</b>, most parking lots are signed no-overnight, and town peace officers actively patrol and contact people sleeping in vehicles.</p>
+    <p>Canmore runs a paid "Safe Park" program as the sanctioned alternative, <b>but confirm its current price and location directly with the Town</b> &mdash; the specific figures floating around online failed fact-checking and are likely stale.</p>
+  </div>
+
+  <div style="margin-top:26px;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--pine);border-radius:14px;padding:24px 28px;box-shadow:var(--shadow)">
+    <h3 style="margin:0 0 8px;color:var(--pine-deep)">&#9989; The move that works</h3>
+    <p style="margin:0;color:var(--ink-soft)">Sleep on <b>Alberta Crown land west of Calgary</b> (Eastern Slopes, Public Lands Camping Pass in hand) or in a <b>paid park campground</b>, and day-trip into Banff. Do <b>not</b> plan on a free pullout snooze inside the park or in Canmore &mdash; that is the one stretch where "just sleep in the car" gets you ticketed.</p>
+  </div>
+</section>
+
+<!-- ============ THE RULES ============ -->
+<section class="container" id="rules">
+  <span class="sec-tag">Know these cold</span>
+  <h2 class="sec">The four rules that govern the whole route</h2>
+  <div class="rules">
+    <div class="rule">
+      <div class="ic">&#127957;</div>
+      <div>
+        <h4>US BLM &mdash; the "14 and move" rule <span class="num">(NV, UT, ID)</span></h4>
+        <p>Most BLM land allows dispersed camping unless posted "Closed to Camping." Limit is 14 days within any 28-day period at one spot, then relocate, often 25&ndash;30 miles away. This is the backbone of the free US legs.</p>
+      </div>
+    </div>
+    <div class="rule">
+      <div class="ic">&#127794;</div>
+      <div>
+        <h4>US National Forests &mdash; per-forest limits</h4>
+        <p>Dispersed vehicle camping is allowed but each forest sets its own limit. Humboldt-Toiyabe (NV) and Salmon-Challis (ID) use 14 days; Custer Gallatin around Bozeman uses <b>16 days</b> (32 cumulative per year). Always check the specific forest's order.</p>
+      </div>
+    </div>
+    <div class="rule">
+      <div class="ic">&#127991;&#65039;</div>
+      <div>
+        <h4>Alberta Crown land &mdash; buy the pass</h4>
+        <p>Random camping in the Eastern Slopes needs a Public Lands Camping Pass for anyone 18+ ($20/3-day or $30/annual, identical rate for non-residents). Max 14 days per spot, then move 1+ km for 72 hours. Kananaskis vehicle access needs the separate Conservation Pass too.</p>
+      </div>
+    </div>
+    <div class="rule warn">
+      <div class="ic">&#128683;</div>
+      <div>
+        <h4>National parks &amp; Canmore &mdash; do not car camp</h4>
+        <p>Banff and Jasper: designated campgrounds only, no vehicle sleeping in pullouts/lots/trailheads. Canmore: $100 fine 10pm&ndash;8am with active patrols. Treat this as a hard no and plan Crown land or a paid campground instead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AT-A-GLANCE TABLE ============ -->
+<section class="container" id="table">
+  <span class="sec-tag">Cheat sheet</span>
+  <h2 class="sec">Every leg at a glance</h2>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Leg</th><th>Land type</th><th>Cost</th><th>Stay limit</th><th>Car camp?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>Nevada</b></td><td>BLM / Humboldt-Toiyabe NF</td><td>Free</td><td>14 days (both)</td><td><span class="pill ok">Yes</span></td></tr>
+        <tr><td><b>Utah</b></td><td>BLM / Uinta corridor</td><td>Free*</td><td>14 days</td><td><span class="pill ok">Yes</span></td></tr>
+        <tr><td><b>Idaho</b></td><td>Salmon-Challis NF / BLM</td><td>Free</td><td>14 days</td><td><span class="pill ok">Yes</span></td></tr>
+        <tr><td><b>Montana (Bozeman)</b></td><td>Custer Gallatin NF / BLM</td><td>Free</td><td>16 days (NF) / 14 (BLM)</td><td><span class="pill ok">Yes &mdash; named sites</span></td></tr>
+        <tr><td><b>British Columbia</b></td><td>Forest Service rec sites</td><td>Free&ndash;cheap</td><td>14 consecutive days</td><td><span class="pill ok">Yes</span></td></tr>
+        <tr><td><b>Alberta (Eastern Slopes)</b></td><td>Crown land</td><td>$20/3d or $30/yr pass</td><td>14 days, then move 1 km</td><td><span class="pill mid">Yes, with pass</span></td></tr>
+        <tr><td><b>Banff &amp; Jasper NP</b></td><td>National park</td><td>Paid campgrounds only</td><td>14 nights (frontcountry)</td><td><span class="pill bad">No free option</span></td></tr>
+        <tr><td><b>Canmore (town)</b></td><td>Municipal</td><td>$100 fine if you try</td><td>&mdash;</td><td><span class="pill bad">No (10pm&ndash;8am)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:.82rem;color:var(--ink-soft);margin-top:12px">* Utah BLM is generally free but some field-office areas post fees or permits &mdash; check locally. Setback rule of thumb everywhere: camp ~200 ft back from lakes and streams.</p>
+</section>
+
+<!-- ============ STILL OPEN ============ -->
+<section class="container" id="open">
+  <span class="sec-tag">Honest gaps</span>
+  <h2 class="sec">What still needs a boots-on-ground check</h2>
+  <p class="lede">The deep-research pass verified every legal rule above against primary government sources, but a few things it could not pin down. Worth a quick call or app-check before you roll:</p>
+  <div class="oq">
+    <h3>Open questions the research flagged</h3>
+    <ul>
+      <li><b>Specific named lake-view sites for NV, UT and ID.</b> Only the Bozeman, MT cluster produced vetted named spots. For the earlier legs, use apps like iOverlander / The Dyrt / FreeRoam on the ground, anchored to the BLM/NF rules above (Great Basin, Uinta/Wasatch, and the Sawtooth NRA lakes are the scenic targets).</li>
+      <li><b>Canmore Safe Park current terms.</b> The only sanctioned vehicle-sleeping option near Banff, but its published price/location details failed verification as stale. Confirm with the Town of Canmore directly.</li>
+      <li><b>Border-crossing practicalities.</b> Firewood, fresh produce, and bear-spray rules crossing into Canada were not verified here &mdash; check CBSA before the line. (General tip: don't haul firewood or citrus across; declare bear spray.)</li>
+      <li><b>Cell coverage &amp; season.</b> Coverage across remote Idaho/Montana and the Eastern Slopes, plus snow closures and fire bans, were not confirmed. Roughly, the free high-country sites are a <b>late-June to mid-September</b> game; download offline maps.</li>
+      <li><b>Best Alberta PLUZ / BC rec sites within 1&ndash;2 hrs of Banff</b> for lake-view random camping (Ghost, Waiparous, Spray Lakes vs. pass-gated Kananaskis zones).</li>
+    </ul>
+  </div>
+
+  <div class="disclaimer">
+    <b>How solid is this?</b> Every legal rule here was cross-checked by a multi-agent research pass against primary sources (BLM.gov, USFS, Alberta.ca, gov.bc.ca, Parks Canada, and the Town of Canmore bylaw) with 3-vote adversarial verification. Confidence: US BLM/NF rules, Alberta pass, BC rec-site limit, and the Banff/Canmore prohibitions all rated <span class="conf high">High</span>. The named Montana sites and the 200-ft water setback rated <span class="conf medium">Medium</span> (details rest partly on crowd-sourced listings). Figures verified as of July 6, 2026 and can change by field office and season. This is trip-planning info, not legal advice.
+  </div>
+</section>
+
+<!-- ============ FOOTER / SOURCES ============ -->
+<footer>
+  <div class="container">
+    <h3>Primary sources</h3>
+    <ul>
+      <li><a href="https://www.blm.gov/programs/recreation/camping">BLM &mdash; Camping (national 14-day rule)</a></li>
+      <li><a href="https://www.blm.gov/sites/default/files/docs/2023-08/BLM%20Utah%20Dispersed%20Camping_0.pdf">BLM Utah &mdash; Dispersed Camping (PDF)</a></li>
+      <li><a href="https://www.blm.gov/sites/blm.gov/files/documents/files/BLM%20ID_Camping_Guidelines.pdf">BLM Idaho &mdash; Camping Guidelines (PDF)</a></li>
+      <li><a href="https://www.fs.usda.gov/r04/recreation/dispersed-camping">USFS Intermountain Region &mdash; Dispersed Camping</a></li>
+      <li><a href="https://www.fs.usda.gov/r01/custergallatin/recreation/fairy-lake-campground">USFS Custer Gallatin NF &mdash; Fairy Lake</a></li>
+      <li><a href="https://hyalite.org/camping">Hyalite.org &mdash; Camping</a></li>
+      <li><a href="https://www.alberta.ca/public-lands-camping-pass">Alberta &mdash; Public Lands Camping Pass</a></li>
+      <li><a href="https://www.alberta.ca/camping-on-public-land">Alberta &mdash; Camping on Public Land</a></li>
+      <li><a href="https://www2.gov.bc.ca/gov/content/sports-culture/recreation/camping-hiking/sites-trails/planning/rules">BC &mdash; Rec Sites &amp; Trails Rules</a></li>
+      <li><a href="https://parks.canada.ca/pn-np/ab/banff/securite-safety/regles-rules">Parks Canada &mdash; Banff Rules</a></li>
+      <li><a href="https://parks.canada.ca/pn-np/ab/jasper/securite-safety/regles-rules">Parks Canada &mdash; Jasper Rules</a></li>
+      <li><a href="https://www.rmoutlook.com/canmore/quarry-lake-fines-clarified-new-fine-for-sleeping-overnight-in-vehicle-8983301">Rocky Mountain Outlook &mdash; Canmore vehicle-sleeping fine</a></li>
+    </ul>
+    <p class="meta">
+      Las Vegas &rarr; Banff Free Car-Camping Field Guide &nbsp;&bull;&nbsp; v1.0 &nbsp;&bull;&nbsp; compiled July 6, 2026<br>
+      Built from a fact-checked deep-research pass (105 research agents, primary-source verified). Photos: Wikimedia Commons (Moraine Lake, Lake Louise, Great Basin, Flaming Gorge, Redfish/Stanley Lake, Hyalite, Spray Lakes, Kananaskis, Canmore). Trip-planning information only, not legal advice.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

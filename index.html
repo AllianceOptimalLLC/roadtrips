@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roadtrips &mdash; field guides for the open road</title>
+<meta name="description" content="A growing collection of hand-built road trip field guides: routes, legal free camping, lake-and-mountain views, and the honest gotchas.">
+<style>
+  :root{
+    --ink:#1a2432; --ink-soft:#42506a; --paper:#f6f4ee; --card:#ffffff;
+    --pine:#1f5f4f; --pine-deep:#123c31; --lake:#2f6f9c; --sun:#d98a2b;
+    --line:#e4ddd0; --gold:#c9a24a; --shadow:0 10px 30px rgba(20,40,30,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.14;letter-spacing:-.01em}
+  a{color:var(--lake);text-decoration:none}
+
+  /* hero */
+  .hero{position:relative;min-height:66vh;display:flex;align-items:flex-end;background:#0b1a16;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(.78)}
+  .hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,26,22,.3),rgba(10,26,22,.2) 40%,rgba(10,26,22,.9))}
+  .hero .wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;width:100%;padding:0 28px 56px}
+  .kicker{display:inline-block;color:#f3e9d2;letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;font-weight:700;
+    margin-bottom:18px;border:1px solid rgba(243,233,210,.5);padding:7px 14px;border-radius:100px;background:rgba(18,60,49,.35);backdrop-filter:blur(3px)}
+  .hero h1{color:#fff;font-size:clamp(2.6rem,7vw,5rem);margin:0 0 14px;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+  .hero p{color:#eee6d6;font-size:clamp(1.05rem,2.2vw,1.4rem);max-width:640px;margin:0;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+
+  .container{max-width:1080px;margin:0 auto;padding:0 28px}
+  section{padding:64px 0}
+  .sec-tag{display:block;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;font-weight:700;color:var(--sun);margin-bottom:10px}
+  h2.sec{font-size:clamp(1.7rem,3.6vw,2.5rem);margin:0 0 6px;color:var(--pine-deep)}
+  .lede{font-size:1.18rem;color:var(--ink-soft);max-width:720px}
+
+  /* trip grid */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:38px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .trip{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);
+    display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+  a.trip:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(20,40,30,.18)}
+  .trip .ph{position:relative;height:250px;overflow:hidden}
+  .trip .ph img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+  a.trip:hover .ph img{transform:scale(1.06)}
+  .trip .num{position:absolute;top:16px;left:16px;z-index:2;background:rgba(18,60,49,.92);color:#fff;font-weight:700;
+    width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:1.1rem}
+  .trip .live{position:absolute;top:20px;right:16px;z-index:2;background:var(--gold);color:#26200c;font-size:.66rem;font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:100px}
+  .trip .body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+  .trip .route{font-size:.8rem;color:var(--sun);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+  .trip h3{margin:0 0 8px;font-size:1.5rem;color:var(--pine-deep)}
+  .trip p{margin:0 0 18px;color:var(--ink-soft);font-size:.97rem}
+  .trip .meta{margin-top:auto;display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px;font-size:.83rem}
+  .trip .meta b{color:var(--pine);display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em}
+  .trip .cta{color:var(--lake);font-weight:700;margin-top:16px;font-size:.95rem}
+
+  /* placeholder card */
+  .soon{background:repeating-linear-gradient(135deg,#fbfaf5,#fbfaf5 14px,#f4f1e8 14px,#f4f1e8 28px);
+    border:2px dashed var(--line);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:48px 30px;min-height:250px;color:var(--ink-soft)}
+  .soon .plus{font-size:2.4rem;color:var(--gold);line-height:1;margin-bottom:10px}
+  .soon h3{margin:0 0 6px;color:var(--pine-deep);font-size:1.25rem}
+  .soon p{margin:0;font-size:.9rem}
+
+  footer{background:var(--pine-deep);color:#cdd8d0;padding:44px 0 54px;margin-top:20px}
+  footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  footer b{color:#fff;font-family:Georgia,serif;font-size:1.2rem}
+  .meta-foot{font-size:.82rem;color:#8fa79b}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="trips/vegas-to-banff/img/lakelouise.jpg" alt="Glacial lake framed by mountains">
+  <div class="veil"></div>
+  <div class="wrap">
+    <span class="kicker">Field guides for the open road</span>
+    <h1>Roadtrips</h1>
+    <p>Hand-built, fact-checked guides to great drives: the route, where you can legally sleep for free, and the lake-and-mountain views worth stopping for.</p>
+  </div>
+</header>
+
+<section class="container">
+  <span class="sec-tag">The collection</span>
+  <h2 class="sec">Trips</h2>
+  <p class="lede">Each guide is researched against primary sources, then written for someone who just wants to know where to point the car and where to park for the night.</p>
+
+  <div class="grid">
+
+    <a class="trip" href="/trips/vegas-to-banff/">
+      <div class="ph">
+        <span class="num">01</span>
+        <span class="live">Live</span>
+        <img src="trips/vegas-to-banff/img/moraine.jpg" alt="Turquoise glacial lake below jagged peaks">
+      </div>
+      <div class="body">
+        <div class="route">Nevada &rarr; Utah &rarr; Idaho &rarr; Montana &rarr; Alberta</div>
+        <h3>Las Vegas to Banff</h3>
+        <p>Free car-camping the whole way north, near mountains and lake views. Where it's legal, where it isn't (hint: not inside Banff), and the honest gotchas at the border.</p>
+        <div class="meta">
+          <div><b>Distance</b>~1,650 mi</div>
+          <div><b>Best season</b>Late Jun&ndash;mid Sep</div>
+          <div><b>Free spots</b>8 legal zones</div>
+        </div>
+        <div class="cta">Open the guide &rarr;</div>
+      </div>
+    </a>
+
+    <div class="soon">
+      <div class="plus">+</div>
+      <h3>More roads coming</h3>
+      <p>The next guide goes here. Same format: route, legal free camping, the views, the catches.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <b>Roadtrips</b>
+    <span class="meta-foot">Built for the drive &bull; fact-checked field guides &bull; trip-planning info, not legal advice</span>
+  </div>
+</footer>
+
+</body>
+</html>
