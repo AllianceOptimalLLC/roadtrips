@@ -5,152 +5,152 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Las Vegas to Banff: Free Car-Camping Field Guide</title>
 <style>
-  :root{
-    --ink:#1a2432; --ink-soft:#42506a; --paper:#f6f4ee; --card:#ffffff;
-    --pine:#1f5f4f; --pine-deep:#123c31; --lake:#2f6f9c; --sun:#d98a2b;
-    --danger:#b23b3b; --danger-bg:#fdf1ef; --line:#e4ddd0; --gold:#c9a24a;
-    --shadow:0 10px 30px rgba(20,40,30,.10);
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.15;letter-spacing:-.01em}
-  a{color:var(--lake);text-decoration:none}
-  a:hover{text-decoration:underline}
+ :root{
+ --ink:#1a2432; --ink-soft:#42506a; --paper:#f6f4ee; --card:#ffffff;
+ --pine:#1f5f4f; --pine-deep:#123c31; --lake:#2f6f9c; --sun:#d98a2b;
+ --danger:#b23b3b; --danger-bg:#fdf1ef; --line:#e4ddd0; --gold:#c9a24a;
+ --shadow:0 10px 30px rgba(20,40,30,.10);
+ }
+ *{box-sizing:border-box}
+ html{scroll-behavior:smooth}
+ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+ h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+ a{color:var(--lake);text-decoration:none}
+ a:hover{text-decoration:underline}
 
-  /* ---------- HERO ---------- */
-  .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;
-    background:#0b1a16;overflow:hidden}
-  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-    filter:saturate(1.05) brightness(.82)}
-  .hero .veil{position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(10,26,22,.35) 0%,rgba(10,26,22,.15) 40%,rgba(10,26,22,.85) 100%)}
-  .hero .wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;width:100%;padding:0 28px 54px}
-  .kicker{display:inline-block;color:#f3e9d2;letter-spacing:.28em;text-transform:uppercase;
-    font-size:.72rem;font-weight:700;margin-bottom:18px;
-    border:1px solid rgba(243,233,210,.5);padding:7px 14px;border-radius:100px;
-    background:rgba(18,60,49,.35);backdrop-filter:blur(3px)}
-  .hero h1{color:#fff;font-size:clamp(2.4rem,6vw,4.4rem);margin:0 0 14px;
-    text-shadow:0 2px 24px rgba(0,0,0,.4)}
-  .hero p.sub{color:#eee6d6;font-size:clamp(1.05rem,2.2vw,1.4rem);max-width:640px;margin:0;
-    text-shadow:0 1px 10px rgba(0,0,0,.5)}
-  .hero .route-line{color:#f3e9d2;font-weight:600;margin-top:22px;font-size:1rem;
-    display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-  .hero .route-line span.dot{opacity:.6}
+ /* ---------- HERO ---------- */
+ .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;
+ background:#0b1a16;overflow:hidden}
+ .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+ filter:saturate(1.05) brightness(.82)}
+ .hero .veil{position:absolute;inset:0;
+ background:linear-gradient(180deg,rgba(10,26,22,.35) 0%,rgba(10,26,22,.15) 40%,rgba(10,26,22,.85) 100%)}
+ .hero .wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;width:100%;padding:0 28px 54px}
+ .kicker{display:inline-block;color:#f3e9d2;letter-spacing:.28em;text-transform:uppercase;
+ font-size:.72rem;font-weight:700;margin-bottom:18px;
+ border:1px solid rgba(243,233,210,.5);padding:7px 14px;border-radius:100px;
+ background:rgba(18,60,49,.35);backdrop-filter:blur(3px)}
+ .hero h1{color:#fff;font-size:clamp(2.4rem,6vw,4.4rem);margin:0 0 14px;
+ text-shadow:0 2px 24px rgba(0,0,0,.4)}
+ .hero p.sub{color:#eee6d6;font-size:clamp(1.05rem,2.2vw,1.4rem);max-width:640px;margin:0;
+ text-shadow:0 1px 10px rgba(0,0,0,.5)}
+ .hero .route-line{color:#f3e9d2;font-weight:600;margin-top:22px;font-size:1rem;
+ display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+ .hero .route-line span.dot{opacity:.6}
 
-  /* ---------- LAYOUT ---------- */
-  .container{max-width:1080px;margin:0 auto;padding:0 28px}
-  section{padding:60px 0}
-  .lede{font-size:1.22rem;color:var(--ink-soft);max-width:760px}
-  h2.sec{font-size:clamp(1.7rem,3.6vw,2.5rem);margin:0 0 6px;color:var(--pine-deep)}
-  .sec-tag{display:block;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;
-    font-weight:700;color:var(--sun);margin-bottom:10px}
+ /* ---------- LAYOUT ---------- */
+ .container{max-width:1080px;margin:0 auto;padding:0 28px}
+ section{padding:60px 0}
+ .lede{font-size:1.22rem;color:var(--ink-soft);max-width:760px}
+ h2.sec{font-size:clamp(1.7rem,3.6vw,2.5rem);margin:0 0 6px;color:var(--pine-deep)}
+ .sec-tag{display:block;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;
+ font-weight:700;color:var(--sun);margin-bottom:10px}
 
-  /* ---------- TLDR box ---------- */
-  .tldr{background:linear-gradient(135deg,#123c31,#1f5f4f);color:#f1f3ee;border-radius:20px;
-    padding:34px 36px;box-shadow:var(--shadow);margin-top:26px}
-  .tldr h3{margin:0 0 14px;color:#fff;font-size:1.35rem}
-  .tldr ul{margin:0;padding-left:0;list-style:none}
-  .tldr li{padding:9px 0 9px 34px;position:relative;border-top:1px solid rgba(255,255,255,.12)}
-  .tldr li:first-child{border-top:none}
-  .tldr li::before{content:"";position:absolute;left:4px;top:15px;width:12px;height:12px;
-    border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,162,74,.25)}
-  .tldr b{color:#fff}
+ /* ---------- TLDR box ---------- */
+ .tldr{background:linear-gradient(135deg,#123c31,#1f5f4f);color:#f1f3ee;border-radius:20px;
+ padding:34px 36px;box-shadow:var(--shadow);margin-top:26px}
+ .tldr h3{margin:0 0 14px;color:#fff;font-size:1.35rem}
+ .tldr ul{margin:0;padding-left:0;list-style:none}
+ .tldr li{padding:9px 0 9px 34px;position:relative;border-top:1px solid rgba(255,255,255,.12)}
+ .tldr li:first-child{border-top:none}
+ .tldr li::before{content:"";position:absolute;left:4px;top:15px;width:12px;height:12px;
+ border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,162,74,.25)}
+ .tldr b{color:#fff}
 
-  /* ---------- route strip ---------- */
-  .strip{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:34px;
-    border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
-  .leg{padding:18px 14px;background:var(--card);text-align:center;position:relative}
-  .leg:nth-child(odd){background:#fbfaf5}
-  .leg .n{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sun);font-weight:700}
-  .leg .place{font-weight:700;margin:6px 0 2px;font-size:.98rem}
-  .leg .mi{font-size:.8rem;color:var(--ink-soft)}
-  @media(max-width:720px){.strip{grid-template-columns:repeat(2,1fr)}}
+ /* ---------- route strip ---------- */
+ .strip{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:34px;
+ border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+ .leg{padding:18px 14px;background:var(--card);text-align:center;position:relative}
+ .leg:nth-child(odd){background:#fbfaf5}
+ .leg .n{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sun);font-weight:700}
+ .leg .place{font-weight:700;margin:6px 0 2px;font-size:.98rem}
+ .leg .mi{font-size:.8rem;color:var(--ink-soft)}
+ @media(max-width:720px){.strip{grid-template-columns:repeat(2,1fr)}}
 
-  /* ---------- spot cards ---------- */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:34px}
-  @media(max-width:760px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
-    border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
-  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,40,30,.16)}
-  .card .ph{position:relative;height:210px;overflow:hidden}
-  .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-  .card:hover .ph img{transform:scale(1.05)}
-  .card .badge{position:absolute;top:14px;left:14px;z-index:2;background:rgba(18,60,49,.92);color:#fff;
-    font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:100px}
-  .card .badge.free{background:rgba(31,95,79,.94)}
-  .card .badge.pass{background:rgba(47,111,156,.94)}
-  .card .badge.no{background:rgba(178,59,59,.94)}
-  .card .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
-  .card h3{margin:0 0 3px;font-size:1.3rem;color:var(--pine-deep)}
-  .card .loc{font-size:.82rem;color:var(--sun);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
-  .card p{margin:0 0 14px;color:var(--ink-soft);font-size:.96rem}
-  .facts{margin-top:auto;border-top:1px solid var(--line);padding-top:14px;display:grid;gap:7px}
-  .fact{display:flex;gap:10px;font-size:.86rem;align-items:baseline}
-  .fact .k{color:var(--pine);font-weight:700;min-width:74px;flex-shrink:0}
-  .fact .v{color:var(--ink)}
-  .view-tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
-  .tag{font-size:.72rem;background:#eef3ee;color:var(--pine);border-radius:100px;padding:4px 11px;font-weight:600}
-  .tag.lake{background:#eaf2f8;color:var(--lake)}
+ /* ---------- spot cards ---------- */
+ .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:34px}
+ @media(max-width:760px){.grid{grid-template-columns:1fr}}
+ .card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
+ border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+ .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,40,30,.16)}
+ .card .ph{position:relative;height:210px;overflow:hidden}
+ .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+ .card:hover .ph img{transform:scale(1.05)}
+ .card .badge{position:absolute;top:14px;left:14px;z-index:2;background:rgba(18,60,49,.92);color:#fff;
+ font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:100px}
+ .card .badge.free{background:rgba(31,95,79,.94)}
+ .card .badge.pass{background:rgba(47,111,156,.94)}
+ .card .badge.no{background:rgba(178,59,59,.94)}
+ .card .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+ .card h3{margin:0 0 3px;font-size:1.3rem;color:var(--pine-deep)}
+ .card .loc{font-size:.82rem;color:var(--sun);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+ .card p{margin:0 0 14px;color:var(--ink-soft);font-size:.96rem}
+ .facts{margin-top:auto;border-top:1px solid var(--line);padding-top:14px;display:grid;gap:7px}
+ .fact{display:flex;gap:10px;font-size:.86rem;align-items:baseline}
+ .fact .k{color:var(--pine);font-weight:700;min-width:74px;flex-shrink:0}
+ .fact .v{color:var(--ink)}
+ .view-tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+ .tag{font-size:.72rem;background:#eef3ee;color:var(--pine);border-radius:100px;padding:4px 11px;font-weight:600}
+ .tag.lake{background:#eaf2f8;color:var(--lake)}
 
-  /* ---------- rules / danger ---------- */
-  .rules{background:var(--card);border-radius:18px;box-shadow:var(--shadow);border:1px solid var(--line);
-    padding:8px 34px;margin-top:30px}
-  .rule{padding:22px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start}
-  .rule:first-child{border-top:none}
-  .rule .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-    font-size:1.5rem;background:#eef3ee}
-  .rule.warn .ic{background:var(--danger-bg)}
-  .rule h4{margin:0 0 5px;font-size:1.12rem}
-  .rule p{margin:0;color:var(--ink-soft);font-size:.95rem}
-  .rule .num{font-weight:700;color:var(--pine)}
+ /* ---------- rules / danger ---------- */
+ .rules{background:var(--card);border-radius:18px;box-shadow:var(--shadow);border:1px solid var(--line);
+ padding:8px 34px;margin-top:30px}
+ .rule{padding:22px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start}
+ .rule:first-child{border-top:none}
+ .rule .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+ font-size:1.5rem;background:#eef3ee}
+ .rule.warn .ic{background:var(--danger-bg)}
+ .rule h4{margin:0 0 5px;font-size:1.12rem}
+ .rule p{margin:0;color:var(--ink-soft);font-size:.95rem}
+ .rule .num{font-weight:700;color:var(--pine)}
 
-  .danger{background:var(--danger-bg);border:1px solid #f0cdc7;border-left:6px solid var(--danger);
-    border-radius:14px;padding:26px 30px;margin-top:30px}
-  .danger h3{margin:0 0 10px;color:var(--danger);font-size:1.35rem;display:flex;align-items:center;gap:10px}
-  .danger p{margin:0 0 10px;color:#7a2f2f}
-  .danger p:last-child{margin:0}
-  .danger b{color:var(--danger)}
+ .danger{background:var(--danger-bg);border:1px solid #f0cdc7;border-left:6px solid var(--danger);
+ border-radius:14px;padding:26px 30px;margin-top:30px}
+ .danger h3{margin:0 0 10px;color:var(--danger);font-size:1.35rem;display:flex;align-items:center;gap:10px}
+ .danger p{margin:0 0 10px;color:#7a2f2f}
+ .danger p:last-child{margin:0}
+ .danger b{color:var(--danger)}
 
-  /* ---------- open questions ---------- */
-  .oq{background:#fbfaf5;border:1px dashed var(--line);border-radius:16px;padding:26px 30px;margin-top:26px}
-  .oq h3{margin:0 0 10px;color:var(--pine-deep)}
-  .oq ul{margin:0;padding-left:20px;color:var(--ink-soft)}
-  .oq li{margin:8px 0}
+ /* ---------- open questions ---------- */
+ .oq{background:#fbfaf5;border:1px dashed var(--line);border-radius:16px;padding:26px 30px;margin-top:26px}
+ .oq h3{margin:0 0 10px;color:var(--pine-deep)}
+ .oq ul{margin:0;padding-left:20px;color:var(--ink-soft)}
+ .oq li{margin:8px 0}
 
-  /* ---------- table ---------- */
-  .tbl-wrap{overflow-x:auto;margin-top:26px;border-radius:14px;box-shadow:var(--shadow);border:1px solid var(--line)}
-  table{width:100%;border-collapse:collapse;background:var(--card);min-width:640px}
-  th,td{padding:14px 16px;text-align:left;font-size:.9rem;border-bottom:1px solid var(--line)}
-  th{background:var(--pine-deep);color:#f1f3ee;font-weight:600;letter-spacing:.02em}
-  tr:last-child td{border-bottom:none}
-  td .pill{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:100px}
-  .pill.ok{background:#e7f2ec;color:var(--pine)}
-  .pill.mid{background:#fbf1e0;color:var(--sun)}
-  .pill.bad{background:var(--danger-bg);color:var(--danger)}
+ /* ---------- table ---------- */
+ .tbl-wrap{overflow-x:auto;margin-top:26px;border-radius:14px;box-shadow:var(--shadow);border:1px solid var(--line)}
+ table{width:100%;border-collapse:collapse;background:var(--card);min-width:640px}
+ th,td{padding:14px 16px;text-align:left;font-size:.9rem;border-bottom:1px solid var(--line)}
+ th{background:var(--pine-deep);color:#f1f3ee;font-weight:600;letter-spacing:.02em}
+ tr:last-child td{border-bottom:none}
+ td .pill{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:100px}
+ .pill.ok{background:#e7f2ec;color:var(--pine)}
+ .pill.mid{background:#fbf1e0;color:var(--sun)}
+ .pill.bad{background:var(--danger-bg);color:var(--danger)}
 
-  /* ---------- footer / sources ---------- */
-  .conf{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
-    padding:3px 9px;border-radius:100px;margin-left:8px;vertical-align:middle}
-  .conf.high{background:#e7f2ec;color:var(--pine)}
-  .conf.medium{background:#fbf1e0;color:var(--sun)}
-  footer{background:var(--pine-deep);color:#cdd8d0;padding:50px 0 60px;margin-top:20px}
-  footer .container{max-width:1080px}
-  footer h3{color:#fff;margin:0 0 16px}
-  footer ul{columns:2;column-gap:40px;padding-left:18px;margin:0 0 24px}
-  @media(max-width:640px){footer ul{columns:1}}
-  footer li{margin:6px 0;font-size:.85rem;break-inside:avoid}
-  footer a{color:#9dc7b6;word-break:break-word}
-  .meta{font-size:.8rem;color:#8fa79b;border-top:1px solid rgba(255,255,255,.15);padding-top:20px}
-  .disclaimer{font-size:.82rem;color:var(--ink-soft);background:#fbfaf5;border-radius:12px;padding:16px 20px;margin-top:24px;border:1px solid var(--line)}
+ /* ---------- footer / sources ---------- */
+ .conf{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+ padding:3px 9px;border-radius:100px;margin-left:8px;vertical-align:middle}
+ .conf.high{background:#e7f2ec;color:var(--pine)}
+ .conf.medium{background:#fbf1e0;color:var(--sun)}
+ footer{background:var(--pine-deep);color:#cdd8d0;padding:50px 0 60px;margin-top:20px}
+ footer .container{max-width:1080px}
+ footer h3{color:#fff;margin:0 0 16px}
+ footer ul{columns:2;column-gap:40px;padding-left:18px;margin:0 0 24px}
+ @media(max-width:640px){footer ul{columns:1}}
+ footer li{margin:6px 0;font-size:.85rem;break-inside:avoid}
+ footer a{color:#9dc7b6;word-break:break-word}
+ .meta{font-size:.8rem;color:#8fa79b;border-top:1px solid rgba(255,255,255,.15);padding-top:20px}
+ .disclaimer{font-size:.82rem;color:var(--ink-soft);background:#fbfaf5;border-radius:12px;padding:16px 20px;margin-top:24px;border:1px solid var(--line)}
 </style>
 </head>
 <body>
 
 <!-- ============ SITE NAV ============ -->
 <nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
-  padding:12px 22px;background:rgba(18,60,49,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.12)">
+ padding:12px 22px;background:rgba(18,60,49,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.12)">
   <a href="/" style="color:#f3e9d2;font-weight:700;letter-spacing:.02em;text-decoration:none;font-size:.95rem">&#9204;&nbsp; All Roadtrips</a>
   <span style="color:#cdd8d0;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase">Trip 01</span>
 </nav>
@@ -187,7 +187,7 @@
       <li><b>The only vetted named free spots</b> that survived fact-checking cluster in the <b>Bozeman, Montana corridor</b> (Hyalite, Fairy Lake, Copper City).</li>
       <li><b>Closest legal free-style camping to Banff = Alberta Crown land,</b> but you need a <b>Public Lands Camping Pass</b> ($20 / 3 days or $30 / year, same price for Americans).</li>
       <li><b>Inside Banff &amp; Jasper: car camping is flatly illegal</b> outside paid campgrounds, sleeping-in-vehicle included. Fines and eviction.</li>
-      <li><b>Canmore (Banff's gateway town) hunts van sleepers:</b> $100 fine 10pm&ndash;8am, no-camping signs at every entrance, active patrols.</li>
+      <li><b>Canmore (Banff's gateway town) hunts van sleepers:</b> $100 fine 10pm to 8am, no-camping signs at every entrance, active patrols.</li>
     </ul>
   </div>
 
@@ -214,14 +214,14 @@
     <article class="card">
       <div class="ph"><span class="badge free">Free &bull; BLM/NF</span><img src="img/greatbasin.jpg" alt="Wheeler Peak rising above Great Basin, Nevada"></div>
       <div class="body">
-        <div class="loc">Nevada &bull; ~1&ndash;4 hrs from Vegas</div>
+        <div class="loc">Nevada &bull; ~1 to 4 hrs from Vegas</div>
         <h3>Great Basin &amp; NV back-country BLM</h3>
         <div class="view-tags"><span class="tag">Mountains</span><span class="tag">Big-sky stargazing</span></div>
         <p>Your fastest escape from Vegas. Nevada is mostly BLM, so dispersed vehicle camping is legal by default unless posted closed. Aim for the flanks of the Snake Range near Great Basin NP (Humboldt-Toiyabe NF) for real alpine backdrops.</p>
         <div class="facts">
           <div class="fact"><span class="k">Cost</span><span class="v">Free</span></div>
           <div class="fact"><span class="k">Stay limit</span><span class="v">14 days / 28, then move ~25 mi (BLM); 14 days (Humboldt-Toiyabe NF)</span></div>
-          <div class="fact"><span class="k">Note</span><span class="v">No vetted named site survived checking here &mdash; use the BLM/NF default rules and pick a spot on the ground</span></div>
+          <div class="fact"><span class="k">Note</span><span class="v">No vetted named site survived checking here, use the BLM/NF default rules and pick a spot on the ground</span></div>
         </div>
       </div>
     </article>
@@ -262,7 +262,7 @@
     <article class="card">
       <div class="ph"><span class="badge free">Free &bull; Verified</span><img src="img/hyalite.jpg" alt="Forested Montana mountain valley near Hyalite"></div>
       <div class="body">
-        <div class="loc">Montana &bull; ~11&ndash;12 mi from Bozeman</div>
+        <div class="loc">Montana &bull; ~11 to 12 mi from Bozeman</div>
         <h3>Hyalite Canyon Dispersed (FS&nbsp;1046)</h3>
         <div class="view-tags"><span class="tag lake">Reservoir views</span><span class="tag">Creekside</span></div>
         <p>Free USFS dispersed camping near Hyalite Reservoir, good for vans and RVs with creekside, flat sites. Important: camping is legal only at the <b>designated carsonite-signed sites</b> within about &frac12; mile of the main roads, not camp-anywhere. Bear food storage required.</p>
@@ -285,7 +285,7 @@
         <div class="facts">
           <div class="fact"><span class="k">Cost</span><span class="v">Free</span></div>
           <div class="fact"><span class="k">Stay limit</span><span class="v">16 days (Custer Gallatin NF)</span></div>
-          <div class="fact"><span class="k">Access</span><span class="v">Rough road &mdash; high clearance advised</span></div>
+          <div class="fact"><span class="k">Access</span><span class="v">Rough road, high clearance advised</span></div>
         </div>
       </div>
     </article>
@@ -348,20 +348,20 @@
   <p class="lede">Everything above gets you free or cheap. The last 100 km is where it flips. Two hard walls stand between you and a free night's sleep at Banff.</p>
 
   <div class="danger">
-    <h3>&#9888;&#65039; Wall 1 &mdash; Inside Banff &amp; Jasper National Parks: illegal, period</h3>
+    <h3>&#9888;&#65039; Wall 1: Inside Banff &amp; Jasper National Parks: illegal, period</h3>
     <p>Both parks' regulations explicitly prohibit camping <b>including sleeping in a vehicle</b> in roadside pullouts, parking lots, trailheads and day-use areas. Banff's own wording: <em>"Camping is allowed only in designated campgrounds."</em></p>
     <p>There is <b>no free vehicle overnight option inside either park.</b> Frontcountry campgrounds cap at 14 nights and cost money. The only random-camping exception is backcountry, permit-only, and far from any road, so by definition it can never be car camping. Violations draw fines and eviction.</p>
   </div>
 
   <div class="danger" style="margin-top:22px">
-    <h3>&#9888;&#65039; Wall 2 &mdash; Canmore (the gateway town) actively hunts van sleepers</h3>
+    <h3>&#9888;&#65039; Wall 2: Canmore (the gateway town) actively hunts van sleepers</h3>
     <p>Under Canmore's camping bylaw, sleeping in a vehicle <b>between 10 p.m. and 8 a.m. carries a $100 fine</b> (up to a $10,000 maximum). No-camping signs are posted at <b>every entrance into town</b>, most parking lots are signed no-overnight, and town peace officers actively patrol and contact people sleeping in vehicles.</p>
-    <p>Canmore runs a paid "Safe Park" program as the sanctioned alternative, <b>but confirm its current price and location directly with the Town</b> &mdash; the specific figures floating around online failed fact-checking and are likely stale.</p>
+    <p>Canmore runs a paid "Safe Park" program as the sanctioned alternative, <b>but confirm its current price and location directly with the Town</b>, the specific figures floating around online failed fact-checking and are likely stale.</p>
   </div>
 
   <div style="margin-top:26px;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--pine);border-radius:14px;padding:24px 28px;box-shadow:var(--shadow)">
     <h3 style="margin:0 0 8px;color:var(--pine-deep)">&#9989; The move that works</h3>
-    <p style="margin:0;color:var(--ink-soft)">Sleep on <b>Alberta Crown land west of Calgary</b> (Eastern Slopes, Public Lands Camping Pass in hand) or in a <b>paid park campground</b>, and day-trip into Banff. Do <b>not</b> plan on a free pullout snooze inside the park or in Canmore &mdash; that is the one stretch where "just sleep in the car" gets you ticketed.</p>
+    <p style="margin:0;color:var(--ink-soft)">Sleep on <b>Alberta Crown land west of Calgary</b> (Eastern Slopes, Public Lands Camping Pass in hand) or in a <b>paid park campground</b>, and day-trip into Banff. Do <b>not</b> plan on a free pullout snooze inside the park or in Canmore, that is the one stretch where "just sleep in the car" gets you ticketed.</p>
   </div>
 </section>
 
@@ -373,29 +373,29 @@
     <div class="rule">
       <div class="ic">&#127957;</div>
       <div>
-        <h4>US BLM &mdash; the "14 and move" rule <span class="num">(NV, UT, ID)</span></h4>
-        <p>Most BLM land allows dispersed camping unless posted "Closed to Camping." Limit is 14 days within any 28-day period at one spot, then relocate, often 25&ndash;30 miles away. This is the backbone of the free US legs.</p>
+        <h4>US BLM, the "14 and move" rule <span class="num">(NV, UT, ID)</span></h4>
+        <p>Most BLM land allows dispersed camping unless posted "Closed to Camping." Limit is 14 days within any 28-day period at one spot, then relocate, often 25 to 30 miles away. This is the backbone of the free US legs.</p>
       </div>
     </div>
     <div class="rule">
       <div class="ic">&#127794;</div>
       <div>
-        <h4>US National Forests &mdash; per-forest limits</h4>
+        <h4>US National Forests, per-forest limits</h4>
         <p>Dispersed vehicle camping is allowed but each forest sets its own limit. Humboldt-Toiyabe (NV) and Salmon-Challis (ID) use 14 days; Custer Gallatin around Bozeman uses <b>16 days</b> (32 cumulative per year). Always check the specific forest's order.</p>
       </div>
     </div>
     <div class="rule">
       <div class="ic">&#127991;&#65039;</div>
       <div>
-        <h4>Alberta Crown land &mdash; buy the pass</h4>
+        <h4>Alberta Crown land, buy the pass</h4>
         <p>Random camping in the Eastern Slopes needs a Public Lands Camping Pass for anyone 18+ ($20/3-day or $30/annual, identical rate for non-residents). Max 14 days per spot, then move 1+ km for 72 hours. Kananaskis vehicle access needs the separate Conservation Pass too.</p>
       </div>
     </div>
     <div class="rule warn">
       <div class="ic">&#128683;</div>
       <div>
-        <h4>National parks &amp; Canmore &mdash; do not car camp</h4>
-        <p>Banff and Jasper: designated campgrounds only, no vehicle sleeping in pullouts/lots/trailheads. Canmore: $100 fine 10pm&ndash;8am with active patrols. Treat this as a hard no and plan Crown land or a paid campground instead.</p>
+        <h4>National parks &amp; Canmore, do not car camp</h4>
+        <p>Banff and Jasper: designated campgrounds only, no vehicle sleeping in pullouts/lots/trailheads. Canmore: $100 fine 10pm to 8am with active patrols. Treat this as a hard no and plan Crown land or a paid campground instead.</p>
       </div>
     </div>
   </div>
@@ -414,15 +414,15 @@
         <tr><td><b>Nevada</b></td><td>BLM / Humboldt-Toiyabe NF</td><td>Free</td><td>14 days (both)</td><td><span class="pill ok">Yes</span></td></tr>
         <tr><td><b>Utah</b></td><td>BLM / Uinta corridor</td><td>Free*</td><td>14 days</td><td><span class="pill ok">Yes</span></td></tr>
         <tr><td><b>Idaho</b></td><td>Salmon-Challis NF / BLM</td><td>Free</td><td>14 days</td><td><span class="pill ok">Yes</span></td></tr>
-        <tr><td><b>Montana (Bozeman)</b></td><td>Custer Gallatin NF / BLM</td><td>Free</td><td>16 days (NF) / 14 (BLM)</td><td><span class="pill ok">Yes &mdash; named sites</span></td></tr>
-        <tr><td><b>British Columbia</b></td><td>Forest Service rec sites</td><td>Free&ndash;cheap</td><td>14 consecutive days</td><td><span class="pill ok">Yes</span></td></tr>
+        <tr><td><b>Montana (Bozeman)</b></td><td>Custer Gallatin NF / BLM</td><td>Free</td><td>16 days (NF) / 14 (BLM)</td><td><span class="pill ok">Yes, named sites</span></td></tr>
+        <tr><td><b>British Columbia</b></td><td>Forest Service rec sites</td><td>Free to cheap</td><td>14 consecutive days</td><td><span class="pill ok">Yes</span></td></tr>
         <tr><td><b>Alberta (Eastern Slopes)</b></td><td>Crown land</td><td>$20/3d or $30/yr pass</td><td>14 days, then move 1 km</td><td><span class="pill mid">Yes, with pass</span></td></tr>
         <tr><td><b>Banff &amp; Jasper NP</b></td><td>National park</td><td>Paid campgrounds only</td><td>14 nights (frontcountry)</td><td><span class="pill bad">No free option</span></td></tr>
-        <tr><td><b>Canmore (town)</b></td><td>Municipal</td><td>$100 fine if you try</td><td>&mdash;</td><td><span class="pill bad">No (10pm&ndash;8am)</span></td></tr>
+        <tr><td><b>Canmore (town)</b></td><td>Municipal</td><td>$100 fine if you try</td><td>-</td><td><span class="pill bad">No (10pm to 8am)</span></td></tr>
       </tbody>
     </table>
   </div>
-  <p style="font-size:.82rem;color:var(--ink-soft);margin-top:12px">* Utah BLM is generally free but some field-office areas post fees or permits &mdash; check locally. Setback rule of thumb everywhere: camp ~200 ft back from lakes and streams.</p>
+  <p style="font-size:.82rem;color:var(--ink-soft);margin-top:12px">* Utah BLM is generally free but some field-office areas post fees or permits, check locally. Setback rule of thumb everywhere: camp ~200 ft back from lakes and streams.</p>
 </section>
 
 <!-- ============ STILL OPEN ============ -->
@@ -435,9 +435,9 @@
     <ul>
       <li><b>Specific named lake-view sites for NV, UT and ID.</b> Only the Bozeman, MT cluster produced vetted named spots. For the earlier legs, use apps like iOverlander / The Dyrt / FreeRoam on the ground, anchored to the BLM/NF rules above (Great Basin, Uinta/Wasatch, and the Sawtooth NRA lakes are the scenic targets).</li>
       <li><b>Canmore Safe Park current terms.</b> The only sanctioned vehicle-sleeping option near Banff, but its published price/location details failed verification as stale. Confirm with the Town of Canmore directly.</li>
-      <li><b>Border-crossing practicalities.</b> Firewood, fresh produce, and bear-spray rules crossing into Canada were not verified here &mdash; check CBSA before the line. (General tip: don't haul firewood or citrus across; declare bear spray.)</li>
+      <li><b>Border-crossing practicalities.</b> Firewood, fresh produce, and bear-spray rules crossing into Canada were not verified here, check CBSA before the line. (General tip: don't haul firewood or citrus across; declare bear spray.)</li>
       <li><b>Cell coverage &amp; season.</b> Coverage across remote Idaho/Montana and the Eastern Slopes, plus snow closures and fire bans, were not confirmed. Roughly, the free high-country sites are a <b>late-June to mid-September</b> game; download offline maps.</li>
-      <li><b>Best Alberta PLUZ / BC rec sites within 1&ndash;2 hrs of Banff</b> for lake-view random camping (Ghost, Waiparous, Spray Lakes vs. pass-gated Kananaskis zones).</li>
+      <li><b>Best Alberta PLUZ / BC rec sites within 1 to 2 hrs of Banff</b> for lake-view random camping (Ghost, Waiparous, Spray Lakes vs. pass-gated Kananaskis zones).</li>
     </ul>
   </div>
 
@@ -451,22 +451,22 @@
   <div class="container">
     <h3>Primary sources</h3>
     <ul>
-      <li><a href="https://www.blm.gov/programs/recreation/camping">BLM &mdash; Camping (national 14-day rule)</a></li>
-      <li><a href="https://www.blm.gov/sites/default/files/docs/2023-08/BLM%20Utah%20Dispersed%20Camping_0.pdf">BLM Utah &mdash; Dispersed Camping (PDF)</a></li>
-      <li><a href="https://www.blm.gov/sites/blm.gov/files/documents/files/BLM%20ID_Camping_Guidelines.pdf">BLM Idaho &mdash; Camping Guidelines (PDF)</a></li>
-      <li><a href="https://www.fs.usda.gov/r04/recreation/dispersed-camping">USFS Intermountain Region &mdash; Dispersed Camping</a></li>
-      <li><a href="https://www.fs.usda.gov/r01/custergallatin/recreation/fairy-lake-campground">USFS Custer Gallatin NF &mdash; Fairy Lake</a></li>
-      <li><a href="https://hyalite.org/camping">Hyalite.org &mdash; Camping</a></li>
-      <li><a href="https://www.alberta.ca/public-lands-camping-pass">Alberta &mdash; Public Lands Camping Pass</a></li>
-      <li><a href="https://www.alberta.ca/camping-on-public-land">Alberta &mdash; Camping on Public Land</a></li>
-      <li><a href="https://www2.gov.bc.ca/gov/content/sports-culture/recreation/camping-hiking/sites-trails/planning/rules">BC &mdash; Rec Sites &amp; Trails Rules</a></li>
-      <li><a href="https://parks.canada.ca/pn-np/ab/banff/securite-safety/regles-rules">Parks Canada &mdash; Banff Rules</a></li>
-      <li><a href="https://parks.canada.ca/pn-np/ab/jasper/securite-safety/regles-rules">Parks Canada &mdash; Jasper Rules</a></li>
-      <li><a href="https://www.rmoutlook.com/canmore/quarry-lake-fines-clarified-new-fine-for-sleeping-overnight-in-vehicle-8983301">Rocky Mountain Outlook &mdash; Canmore vehicle-sleeping fine</a></li>
+      <li><a href="https://www.blm.gov/programs/recreation/camping">BLM: Camping (national 14-day rule)</a></li>
+      <li><a href="https://www.blm.gov/sites/default/files/docs/2023-08/BLM%20Utah%20Dispersed%20Camping_0.pdf">BLM Utah: Dispersed Camping (PDF)</a></li>
+      <li><a href="https://www.blm.gov/sites/blm.gov/files/documents/files/BLM%20ID_Camping_Guidelines.pdf">BLM Idaho: Camping Guidelines (PDF)</a></li>
+      <li><a href="https://www.fs.usda.gov/r04/recreation/dispersed-camping">USFS Intermountain Region: Dispersed Camping</a></li>
+      <li><a href="https://www.fs.usda.gov/r01/custergallatin/recreation/fairy-lake-campground">USFS Custer Gallatin NF: Fairy Lake</a></li>
+      <li><a href="https://hyalite.org/camping">Hyalite.org: Camping</a></li>
+      <li><a href="https://www.alberta.ca/public-lands-camping-pass">Alberta: Public Lands Camping Pass</a></li>
+      <li><a href="https://www.alberta.ca/camping-on-public-land">Alberta: Camping on Public Land</a></li>
+      <li><a href="https://www2.gov.bc.ca/gov/content/sports-culture/recreation/camping-hiking/sites-trails/planning/rules">BC: Rec Sites &amp; Trails Rules</a></li>
+      <li><a href="https://parks.canada.ca/pn-np/ab/banff/securite-safety/regles-rules">Parks Canada: Banff Rules</a></li>
+      <li><a href="https://parks.canada.ca/pn-np/ab/jasper/securite-safety/regles-rules">Parks Canada: Jasper Rules</a></li>
+      <li><a href="https://www.rmoutlook.com/canmore/quarry-lake-fines-clarified-new-fine-for-sleeping-overnight-in-vehicle-8983301">Rocky Mountain Outlook: Canmore vehicle-sleeping fine</a></li>
     </ul>
     <p class="meta">
       Las Vegas &rarr; Banff Free Car-Camping Field Guide &nbsp;&bull;&nbsp; v1.0 &nbsp;&bull;&nbsp; compiled July 6, 2026<br>
-      Built from a fact-checked deep-research pass (105 research agents, primary-source verified). Photos: Wikimedia Commons (Moraine Lake, Lake Louise, Great Basin, Flaming Gorge, Redfish/Stanley Lake, Hyalite, Spray Lakes, Kananaskis, Canmore). Trip-planning information only, not legal advice.
+ Built from a fact-checked deep-research pass (105 research agents, primary-source verified). Photos: Wikimedia Commons (Moraine Lake, Lake Louise, Great Basin, Flaming Gorge, Redfish/Stanley Lake, Hyalite, Spray Lakes, Kananaskis, Canmore). Trip-planning information only, not legal advice.
     </p>
   </div>
 </footer>

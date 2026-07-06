@@ -9,10 +9,10 @@ Static site, no build step. Deployed on Vercel (auto-deploys on push to `main`).
 ## Structure
 
 ```
-index.html                     # hub landing page (lists all trips)
-trips/<slug>/index.html        # one self-contained guide per trip
-trips/<slug>/img/*.jpg         # that trip's photos
-vercel.json                    # cleanUrls + trailingSlash
+index.html # hub landing page (lists all trips)
+trips/<slug>/index.html # one self-contained guide per trip
+trips/<slug>/img/*.jpg # that trip's photos
+vercel.json # cleanUrls + trailingSlash
 ```
 
 ## Add a new trip
@@ -23,7 +23,7 @@ vercel.json                    # cleanUrls + trailingSlash
 
 ## Trips
 
-- **01 &mdash; Las Vegas to Banff** (`/trips/vegas-to-banff/`): free car-camping
-  corridor NV to Alberta, near mountains and lakes. Live.
+- **01, Las Vegas to Banff** (`/trips/vegas-to-banff/`): free car-camping
+ corridor NV to Alberta, near mountains and lakes. Live.
 
 Trip-planning information only, not legal advice.
